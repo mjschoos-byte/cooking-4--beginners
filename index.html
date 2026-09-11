@@ -1,24 +1,154 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My next idea · The Understudy</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#f5f2e9;color:#20281f;font:18px/1.55 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:40px 6vw}header{display:flex;justify-content:space-between;border-bottom:1px solid #b8bcae;padding-bottom:22px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}.stage{display:grid;grid-template-columns:1.5fr 1fr;gap:7vw;align-items:center;min-height:65vh}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(60px,8vw,112px);letter-spacing:-.06em;line-height:.96;margin:40px 0 25px}p{max-width:530px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase}.mark{height:280px;position:relative;display:grid;place-items:center}.mark span{position:absolute;width:160px;height:220px;border:2px solid #42613b;transform:rotate(var(--r));transition:transform .5s}.mark span:nth-child(1){--r:-25deg}.mark span:nth-child(2){--r:0deg;background:#dbe4be}.mark span:nth-child(3){--r:25deg}.mark:hover span{transform:rotate(calc(var(--r) * 1.3))}a{color:inherit;text-underline-offset:5px}.links{display:flex;flex-wrap:wrap;gap:24px;padding:25px 0}.primary{background:#263d24;color:#fff;padding:12px 20px;text-decoration:none}footer{border-top:1px solid #b8bcae;padding-top:24px;font-size:14px}a:focus-visible{outline:3px solid #a54919;outline-offset:5px}@media(max-width:650px){.stage{display:block;min-height:0}.mark{height:170px;margin:30px 0}.mark span{width:100px;height:140px}header{gap:20px}main{padding:25px 7vw}}@media(prefers-reduced-motion:reduce){.mark span{transition:none}.mark:hover span{transform:rotate(var(--r))}}.live{border-top:1px solid #b8bcae;padding:22px 0 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}.live code{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #b8bcae;padding:11px 13px;font-size:14px;overflow-wrap:anywhere}.live button{min-height:44px;padding:11px 18px;font:inherit;font-weight:600;color:#fff;background:#263d24;border:0;cursor:pointer}.live button:focus-visible{outline:3px solid #a54919;outline-offset:5px}.live small{flex-basis:100%;font-size:14px;color:#4a5247}</style>
-<main><header><b>CPVC / The Understudy</b><span>Session 02 · Starter</span></header><section class="stage"><div><h1>A small site.<br>A real beginning.</h1><p>This is my working starter. My own one-page site and one useful interaction come next.</p><p class="eyebrow">Published first. Made mine next.</p></div><div class="mark" aria-hidden="true"><span></span><span></span><span></span></div></section><div class="live"><code id="liveurl">Open this page over http:// or https:// to see its address.</code><button id="copy" type="button">Copy link</button><small id="copyhint">This is the address you submit. Not your GitHub repository address.</small></div><div class="links"><a class="primary" href="https://calpolyvibecoding.com/portal">Submit my live URL ↗</a><a id="guide" href="https://github.com/calpolyvibecoding-01/cpvc-02-understudy-template#readme">Follow the build guide →</a><a href="examples/coast/">See the coastal example →</a></div><footer>Deploy this untouched starter, open the actual live URL, then confirm your portal submission. <strong>STOP 1:</strong> only then brief the agent and build your own idea. Keep the same root URL as your site grows.</footer></main>
-<script>
-(function(){
-  var box=document.getElementById('liveurl'),btn=document.getElementById('copy'),
-      hint=document.getElementById('copyhint'),guide=document.getElementById('guide');
-  var web=location.protocol==='http:'||location.protocol==='https:';
-  var url=web?location.origin+location.pathname:'';
-  if(web){box.textContent=url;}else{btn.hidden=true;hint.textContent='You are viewing this file directly. Publish it with GitHub Pages to get a real address.';}
-  var host=location.hostname.match(/^([a-z0-9-]+)\.github\.io$/i),
-      repo=location.pathname.split('/').filter(Boolean)[0];
-  if(host&&repo){guide.href='https://github.com/'+host[1]+'/'+repo+'#readme';}
-  btn.addEventListener('click',function(){
-    function pick(){var r=document.createRange();r.selectNodeContents(box);
-      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
-      hint.textContent='Link selected. Press Ctrl+C or Cmd+C to copy it.';}
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(url).then(function(){hint.textContent='Copied. Paste it into the Link field in the portal.';},pick);
-    }else{pick();}
-  });
-})();
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A calm, beginner-friendly guide to eight practical meals.">
+  <title>First Plate — Beginner Cooking Guide</title>
+  <style>
+    :root{--paper:#f7f7f4;--card:rgba(255,255,252,.94);--ink:#17221b;--muted:#5c655f;--line:#c7cbc6;--sage:#e4e9e3;--brass:#84672f;--dark:#16271e;--shadow:0 24px 70px rgba(20,35,27,.1)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background-color:var(--paper);background-image:linear-gradient(118deg,transparent 0 27%,rgba(118,130,123,.08) 28%,rgba(255,255,255,.7) 30%,transparent 33%),linear-gradient(26deg,transparent 0 60%,rgba(150,157,152,.07) 61%,transparent 64%),radial-gradient(ellipse at 18% 12%,rgba(255,255,255,.96),transparent 45%),radial-gradient(ellipse at 82% 72%,rgba(203,210,205,.18),transparent 48%);background-size:880px 680px,720px 920px,100% 100%,100% 100%;background-attachment:fixed;color:var(--ink);font:17px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,select{font:inherit}
+    a{color:inherit;text-underline-offset:4px}
+    .shell{width:min(1160px,88vw);margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:26px 0 23px;border-bottom:3px double #aeb5af}
+    .brand{font-family:Georgia,serif;font-size:1.08rem;font-variant:small-caps;letter-spacing:.16em}
+    .tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:8vw;align-items:end;padding:76px 0 50px}
+    .kicker,.label{font-size:.72rem;font-weight:750;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+    h1{max-width:760px;margin:.3em 0 .24em;font:400 clamp(3.5rem,8.5vw,7.8rem)/.9 Georgia,serif;letter-spacing:-.065em}
+    .lede{max-width:630px;margin:0;color:var(--muted);font-size:clamp(1rem,2vw,1.25rem)}
+    .note{border-left:2px solid var(--brass);padding:10px 0 10px 22px;color:var(--muted);font-size:.94rem;font-family:Georgia,serif;font-style:italic}
+    .finder{background:linear-gradient(135deg,#1a2d23,#102219);color:#fff;padding:28px;border:1px solid rgba(132,103,47,.7);border-radius:1px;box-shadow:var(--shadow)}
+    .finder label{display:block;margin-bottom:9px;font-weight:700}
+    .search-row{display:grid;grid-template-columns:1fr auto;gap:10px}
+    input,select{min-height:50px;border:1px solid #9da49f;border-radius:1px;background:#fdfdfb;color:var(--ink);padding:11px 13px}
+    input{width:100%;min-width:0}
+    button{min-height:50px;border:1px solid #9b804b;border-radius:1px;padding:11px 20px;background:var(--brass);color:#fff;font-weight:750;letter-spacing:.02em;cursor:pointer;transition:transform .16s ease,background .16s ease}
+    button:hover{background:#6d5326;transform:translateY(-1px)}
+    button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #b89a5e;outline-offset:3px}
+    .supported{margin:14px 0 0;color:#cfd6cb;font-size:.8rem}
+    .status{min-height:28px;margin:16px 0 0;color:#e7dcc5;font-size:.9rem}
+    .empty{margin:0 0 70px;padding:45px;border:1px solid #b9beb9;background:rgba(255,255,252,.58);text-align:center;color:var(--muted)}
+    .empty strong{display:block;margin-bottom:6px;color:var(--ink);font:400 1.8rem Georgia,serif}
+    .suggestions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:18px}
+    .suggestions button{min-height:38px;padding:7px 12px;background:transparent;color:var(--dark);border:1px solid var(--line);font-size:.84rem}
+    .suggestions button:hover{background:var(--dark);color:#fff;transform:none}
+    .recipe{display:none;margin-bottom:76px;background:var(--card);border:1px solid #b8bdb8;box-shadow:var(--shadow);backdrop-filter:blur(4px)}
+    .recipe.visible{display:block;animation:rise .3s ease both}
+    .recipe-head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;padding:34px 38px;border-bottom:1px solid var(--line)}
+    h2{margin:.12em 0 0;font:400 clamp(2.6rem,6vw,5rem)/1 Georgia,serif;letter-spacing:-.045em}
+    .meta{display:flex;gap:22px;margin-top:12px;color:var(--muted);font-size:.88rem}
+    .servings{display:grid;gap:6px;min-width:150px}
+    .servings label{font-size:.74rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+    .recipe-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:0}
+    .side,.method{padding:36px 38px}
+    .side{background:rgba(235,239,234,.88);border-right:1px solid var(--line)}
+    h3{margin:0 0 16px;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+    ul,ol{margin:0;padding-left:1.25rem}
+    li+li{margin-top:10px}
+    .equipment{margin-top:34px}
+    .safety{margin-top:34px;padding:20px;background:#f2efe7;border-left:4px solid var(--brass)}
+    .safety strong{display:block;margin-bottom:5px;font-size:.73rem;letter-spacing:.12em;text-transform:uppercase}
+    footer{display:flex;justify-content:space-between;gap:28px;padding:26px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+    footer p{margin:0;max-width:680px}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @media(max-width:760px){.shell{width:min(92vw,620px)}header{padding:18px 0}.hero{grid-template-columns:1fr;gap:34px;padding:52px 0 36px}.recipe-head{grid-template-columns:1fr;padding:28px 24px}.recipe-grid{grid-template-columns:1fr}.side,.method{padding:28px 24px}.side{border-right:0;border-bottom:1px solid var(--line)}.empty{padding:32px 20px}footer{display:block}.search-row{grid-template-columns:1fr}.search-row button{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.recipe.visible{animation:none}button{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header><div class="brand">First Plate</div><div class="tag">Cooking without the guesswork</div></header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="kicker">Eight dependable starting points</div>
+          <h1 id="page-title">What are you hungry for?</h1>
+          <p class="lede">Pick a familiar meal. Get the amounts, tools, steps, and one safety cue—without assuming you already speak kitchen.</p>
+        </div>
+        <p class="note">Start small. Read every step once before turning on the heat.</p>
+      </section>
+
+      <form class="finder" id="finder" novalidate>
+        <label for="meal">Find a meal</label>
+        <div class="search-row">
+          <input id="meal" name="meal" list="meal-list" autocomplete="off" placeholder="Try “fried rice”" aria-describedby="supported status">
+          <datalist id="meal-list"></datalist>
+          <button type="submit">Show my guide</button>
+        </div>
+        <p class="supported" id="supported">Choose from 8 beginner-friendly meals. Partial names work.</p>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <section class="empty" id="empty" aria-live="polite">
+        <strong>Your next meal starts here.</strong>
+        Search above, or choose one of these:
+        <div class="suggestions" id="suggestions"></div>
+      </section>
+
+      <article class="recipe" id="recipe" aria-labelledby="recipe-title">
+        <div class="recipe-head">
+          <div>
+            <div class="label">Beginner guide</div>
+            <h2 id="recipe-title"></h2>
+            <div class="meta"><span id="time"></span><span id="difficulty">Level: first-timer</span></div>
+          </div>
+          <div class="servings">
+            <label for="servings">Servings</label>
+            <select id="servings">
+              <option value="1">1 serving</option><option value="2">2 servings</option>
+              <option value="3">3 servings</option><option value="4">4 servings</option>
+            </select>
+          </div>
+        </div>
+        <div class="recipe-grid">
+          <div class="side">
+            <h3>Ingredients</h3><ul id="ingredients"></ul>
+            <div class="equipment"><h3>Equipment</h3><ul id="equipment"></ul></div>
+          </div>
+          <div class="method">
+            <h3>Method</h3><ol id="steps"></ol>
+            <div class="safety"><strong>Safety + doneness</strong><span id="safety"></span></div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>Times are estimates; pan, stove, and ingredient size matter. Poultry, egg-dish, and leftover temperatures follow current U.S. government guidance.</p>
+      <a href="https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures">FoodSafety.gov temperature chart ↗</a>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    'use strict';
+    var recipes=[
+      {name:'Scrambled eggs',aliases:['eggs','scramble'],time:'10 minutes',ingredients:[[2,'large','eggs'],[1,'tbsp','milk or water'],[0.5,'tbsp','butter'],[0.125,'tsp','salt'],[1,'pinch','black pepper']],equipment:['Bowl','Fork or whisk','Nonstick skillet','Silicone spatula'],steps:['Crack the eggs into a bowl. Add milk or water, salt, and pepper; beat until one color.','Warm the skillet over medium-low heat for 1 minute, then melt the butter.','Pour in the eggs. Wait 20 seconds, then slowly push the cooked edges toward the center.','Keep folding gently until soft curds form and no liquid egg remains. Remove from heat right away.'],safety:'Egg dishes should reach 160°F (71°C). If you do not have a thermometer, cook until the eggs are fully set with no liquid egg remaining.'},
+      {name:'Grilled cheese',aliases:['cheese toastie','toastie'],time:'12 minutes',ingredients:[[2,'slices','sandwich bread'],[2,'slices','melting cheese'],[1,'tbsp','softened butter']],equipment:['Skillet','Butter knife','Spatula'],steps:['Butter one side of each bread slice. Put the cheese between the unbuttered sides.','Set the sandwich in a cold skillet, then turn the heat to medium-low.','Cook 3–4 minutes until the bottom is golden. Flip carefully.','Cook the second side 2–3 minutes until golden and the cheese is melted. Rest 1 minute before cutting.'],safety:'Use medium-low heat so the cheese melts before the bread burns. The sandwich is done when both sides are golden and the center is hot and fully melted.'},
+      {name:'Quesadilla',aliases:['quesadillas'],time:'12 minutes',ingredients:[[1,'large','flour tortilla'],[0.75,'cup','shredded cheese'],[0.25,'cup','drained canned beans (optional)'],[1,'tsp','oil']],equipment:['Skillet','Spatula','Knife or pizza cutter'],steps:['Spread cheese over one half of the tortilla. Add beans if using, then fold the tortilla closed.','Heat the oil in a skillet over medium heat. Add the folded tortilla.','Cook 2–3 minutes per side, flipping once, until spotted golden brown.','Move to a board and rest 1 minute before cutting into wedges.'],safety:'The quesadilla is done when the cheese is completely melted and the filling is hot throughout. Let it rest before biting—the center can be much hotter than the tortilla.'},
+      {name:'Pasta with tomato sauce',aliases:['pasta','spaghetti','tomato pasta'],time:'20 minutes',ingredients:[[4,'oz','dry pasta'],[0.75,'cup','prepared tomato sauce'],[1,'tsp','salt for the water'],[1,'tbsp','grated cheese (optional)']],equipment:['Medium pot','Colander','Wooden spoon','Measuring cup'],steps:['Fill the pot about two-thirds with water and bring it to a boil. Add salt.','Add pasta and stir immediately. Cook for the package time, stirring twice.','Taste one piece carefully. When tender with a slight bite, reserve 2 tablespoons of cooking water and drain.','Return pasta to the pot over low heat. Add sauce and a splash of reserved water; stir 1–2 minutes until hot.'],safety:'Turn pot handles inward and drain boiling water away from your body. The pasta is done when tender but not chalky; the sauce should be steaming throughout.'},
+      {name:'Fried rice',aliases:['rice','egg fried rice'],time:'18 minutes',ingredients:[[1,'cup','cold cooked rice'],[1,'large','egg'],[0.5,'cup','frozen mixed vegetables'],[1,'tbsp','soy sauce'],[1,'tbsp','neutral oil']],equipment:['Large skillet','Bowl','Spatula'],steps:['Break up cold rice with clean hands or a fork. Beat the egg in a small bowl.','Heat half the oil in a skillet over medium-high. Scramble the egg until set; move it to a plate.','Add remaining oil and vegetables. Cook 3–4 minutes until hot. Add rice and stir-fry 3 minutes.','Return the egg, add soy sauce, and toss until everything is steaming hot.'],safety:'Use rice that was refrigerated within 2 hours of cooking. Because this is a leftover dish, heat the finished fried rice to 165°F (74°C).'},
+      {name:'Baked potato',aliases:['potato','baked potatoes'],time:'50–65 minutes',ingredients:[[1,'medium','russet potato'],[1,'tsp','oil'],[0.125,'tsp','salt'],[1,'tbsp','butter or plain yogurt']],equipment:['Oven','Fork','Sheet pan','Oven mitts'],steps:['Heat the oven to 425°F (220°C). Scrub the potato under running water and dry it.','Prick the potato 6–8 times with a fork. Rub with oil and salt.','Place on a sheet pan and bake 45–60 minutes, depending on size.','Using oven mitts, squeeze gently. When it yields easily, cut open carefully and add your topping.'],safety:'Always pierce the skin before baking so steam can escape. It is done when a fork slides easily into the center; open it away from your face because hot steam will escape.'},
+      {name:'Pancakes',aliases:['pancake'],time:'20 minutes',ingredients:[[0.75,'cup','all-purpose flour'],[1.5,'tsp','baking powder'],[1,'tbsp','sugar'],[0.125,'tsp','salt'],[0.75,'cup','milk'],[1,'large','egg'],[1,'tbsp','melted butter or oil']],equipment:['Mixing bowl','Whisk or fork','Skillet','Spatula','Measuring cups'],steps:['Whisk flour, baking powder, sugar, and salt in a bowl.','Add milk, egg, and melted butter. Stir just until no dry flour remains; small lumps are fine.','Warm a lightly greased skillet over medium. Pour about 1/4 cup batter per pancake.','When bubbles stay open and edges look dry, flip once. Cook 1–2 minutes until the center springs back lightly.'],safety:'Keep raw batter and utensils away from ready-to-eat food. A pancake is done when both sides are golden and the center is fluffy, not wet or gummy.'},
+      {name:'Oven-baked chicken',aliases:['chicken','baked chicken','chicken breast'],time:'30–35 minutes',ingredients:[[1, 'piece','boneless skinless chicken breast (about 6 oz)'],[1,'tsp','oil'],[0.25,'tsp','salt'],[0.125,'tsp','black pepper'],[0.25,'tsp','garlic powder']],equipment:['Oven','Sheet pan or baking dish','Paper towel','Food thermometer','Oven mitts'],steps:['Heat the oven to 400°F (205°C). Put the chicken in a baking dish; do not rinse it. Pat dry with paper towel.','Rub with oil, salt, pepper, and garlic powder. Wash hands and clean anything that touched raw chicken.','Bake 20–25 minutes. Begin checking the thickest part with a food thermometer at 20 minutes.','Remove when it reaches 165°F (74°C). Rest 5 minutes on a clean plate before slicing.'],safety:'Chicken must reach 165°F (74°C) in the thickest part. Color alone cannot confirm safety; use a food thermometer and keep raw chicken separate from ready-to-eat food.'}
+    ];
+    var finder=document.getElementById('finder'),meal=document.getElementById('meal'),list=document.getElementById('meal-list'),status=document.getElementById('status'),empty=document.getElementById('empty'),suggestions=document.getElementById('suggestions'),article=document.getElementById('recipe'),servings=document.getElementById('servings');
+    var title=document.getElementById('recipe-title'),time=document.getElementById('time'),ingredients=document.getElementById('ingredients'),equipment=document.getElementById('equipment'),steps=document.getElementById('steps'),safety=document.getElementById('safety');
+    var active=null;
+    function clean(value){return value.toLowerCase().trim().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ')}
+    function addTextList(target,values){target.textContent='';values.forEach(function(value){var li=document.createElement('li');li.textContent=value;target.appendChild(li)})}
+    function fraction(number){var rounded=Math.round(number*8)/8,whole=Math.floor(rounded),part=Math.round((rounded-whole)*8),glyph={1:'⅛',2:'¼',3:'⅜',4:'½',5:'⅝',6:'¾',7:'⅞'}[part]||'';return (whole?whole:'')+(whole&&glyph?' ':'')+glyph||'0'}
+    function ingredientLine(item,count){var amount=item[0]*count,unit=item[1],name=item[2],pluralUnits={piece:'pieces',pinch:'pinches',cup:'cups'},pluralNames={egg:'eggs','flour tortilla':'flour tortillas','russet potato':'russet potatoes','boneless skinless chicken breast (about 6 oz)':'boneless skinless chicken breasts (about 6 oz each)'};if(amount>1&&pluralUnits[unit])unit=pluralUnits[unit];if(amount>1&&pluralNames[name])name=pluralNames[name];return fraction(amount)+' '+unit+' '+name}
+    function draw(){if(!active)return;var count=Number(servings.value);title.textContent=active.name;time.textContent='Time: '+active.time;addTextList(ingredients,active.ingredients.map(function(item){return ingredientLine(item,count)}));addTextList(equipment,active.equipment);addTextList(steps,active.steps);safety.textContent=active.safety;article.classList.add('visible');empty.hidden=true;status.textContent=active.name+' guide shown for '+count+(count===1?' serving.':' servings.')}
+    function findRecipe(query){var target=clean(query);if(!target)return null;return recipes.find(function(recipe){var terms=[recipe.name].concat(recipe.aliases).map(clean);return terms.some(function(term){return term===target||term.indexOf(target)>=0||target.indexOf(term)>=0})})||null}
+    function choose(recipe){active=recipe;meal.value=recipe.name;servings.value='1';draw();article.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+    recipes.forEach(function(recipe){var option=document.createElement('option');option.value=recipe.name;list.appendChild(option);var button=document.createElement('button');button.type='button';button.textContent=recipe.name;button.addEventListener('click',function(){choose(recipe)});suggestions.appendChild(button)});
+    finder.addEventListener('submit',function(event){event.preventDefault();var recipe=findRecipe(meal.value);if(recipe){choose(recipe);return}active=null;article.classList.remove('visible');empty.hidden=false;status.textContent=meal.value.trim()?'That meal is not in this small collection. Choose one of the eight supported meals below.':'Enter a meal name or choose one below.';meal.focus()});
+    servings.addEventListener('change',draw);
+  })();
+  </script>
+</body>
 </html>
