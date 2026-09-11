@@ -19,7 +19,7 @@ After STOP 1, help the student propose and approve the six TARGET lines and one 
 
 ## My standing rule
 
-[One observable, student-approved rule that protects this project's purpose or experience.]
+Never display a recipe result unless it includes ingredient amounts, required equipment, numbered beginner-friendly steps, and at least one clearly labeled safety or doneness cue. If the requested meal is unsupported, offer supported alternatives instead of inventing instructions.
 
 ## Workflow
 
