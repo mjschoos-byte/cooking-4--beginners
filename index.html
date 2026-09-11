@@ -6,37 +6,37 @@
   <meta name="description" content="A calm, beginner-friendly guide to eight practical meals.">
   <title>First Plate — Beginner Cooking Guide</title>
   <style>
-    :root{--paper:#f4efe5;--card:#fffaf0;--ink:#242923;--muted:#666b61;--line:#c9c3b7;--sage:#b9c5ad;--orange:#c35c35;--dark:#283329;--shadow:0 20px 60px rgba(40,51,41,.09)}
+    :root{--paper:#f7f7f4;--card:rgba(255,255,252,.94);--ink:#17221b;--muted:#5c655f;--line:#c7cbc6;--sage:#e4e9e3;--brass:#84672f;--dark:#16271e;--shadow:0 24px 70px rgba(20,35,27,.1)}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{margin:0;background-color:var(--paper);background-image:linear-gradient(118deg,transparent 0 27%,rgba(118,130,123,.08) 28%,rgba(255,255,255,.7) 30%,transparent 33%),linear-gradient(26deg,transparent 0 60%,rgba(150,157,152,.07) 61%,transparent 64%),radial-gradient(ellipse at 18% 12%,rgba(255,255,255,.96),transparent 45%),radial-gradient(ellipse at 82% 72%,rgba(203,210,205,.18),transparent 48%);background-size:880px 680px,720px 920px,100% 100%,100% 100%;background-attachment:fixed;color:var(--ink);font:17px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     button,input,select{font:inherit}
     a{color:inherit;text-underline-offset:4px}
     .shell{width:min(1160px,88vw);margin:auto}
-    header{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--line)}
-    .brand{font-family:Georgia,serif;font-size:1.2rem;letter-spacing:.03em}
+    header{display:flex;align-items:center;justify-content:space-between;padding:26px 0 23px;border-bottom:3px double #aeb5af}
+    .brand{font-family:Georgia,serif;font-size:1.08rem;font-variant:small-caps;letter-spacing:.16em}
     .tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
     .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:8vw;align-items:end;padding:76px 0 50px}
-    .kicker,.label{font-size:.72rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+    .kicker,.label{font-size:.72rem;font-weight:750;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
     h1{max-width:760px;margin:.3em 0 .24em;font:400 clamp(3.5rem,8.5vw,7.8rem)/.9 Georgia,serif;letter-spacing:-.065em}
     .lede{max-width:630px;margin:0;color:var(--muted);font-size:clamp(1rem,2vw,1.25rem)}
-    .note{border-left:2px solid var(--orange);padding:10px 0 10px 22px;color:var(--muted);font-size:.94rem}
-    .finder{background:var(--dark);color:#fff;padding:26px;border-radius:3px;box-shadow:var(--shadow)}
+    .note{border-left:2px solid var(--brass);padding:10px 0 10px 22px;color:var(--muted);font-size:.94rem;font-family:Georgia,serif;font-style:italic}
+    .finder{background:linear-gradient(135deg,#1a2d23,#102219);color:#fff;padding:28px;border:1px solid rgba(132,103,47,.7);border-radius:1px;box-shadow:var(--shadow)}
     .finder label{display:block;margin-bottom:9px;font-weight:700}
     .search-row{display:grid;grid-template-columns:1fr auto;gap:10px}
-    input,select{min-height:50px;border:1px solid #8c9489;border-radius:2px;background:#fff;color:var(--ink);padding:11px 13px}
+    input,select{min-height:50px;border:1px solid #9da49f;border-radius:1px;background:#fdfdfb;color:var(--ink);padding:11px 13px}
     input{width:100%;min-width:0}
-    button{min-height:50px;border:0;border-radius:2px;padding:11px 20px;background:var(--orange);color:#fff;font-weight:750;cursor:pointer;transition:transform .16s ease,background .16s ease}
-    button:hover{background:#a94725;transform:translateY(-1px)}
-    button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f3a57f;outline-offset:3px}
+    button{min-height:50px;border:1px solid #9b804b;border-radius:1px;padding:11px 20px;background:var(--brass);color:#fff;font-weight:750;letter-spacing:.02em;cursor:pointer;transition:transform .16s ease,background .16s ease}
+    button:hover{background:#6d5326;transform:translateY(-1px)}
+    button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #b89a5e;outline-offset:3px}
     .supported{margin:14px 0 0;color:#cfd6cb;font-size:.8rem}
-    .status{min-height:28px;margin:16px 0 0;color:#ffe0d1;font-size:.9rem}
-    .empty{margin:0 0 70px;padding:45px;border:1px dashed #aaa697;text-align:center;color:var(--muted)}
+    .status{min-height:28px;margin:16px 0 0;color:#e7dcc5;font-size:.9rem}
+    .empty{margin:0 0 70px;padding:45px;border:1px solid #b9beb9;background:rgba(255,255,252,.58);text-align:center;color:var(--muted)}
     .empty strong{display:block;margin-bottom:6px;color:var(--ink);font:400 1.8rem Georgia,serif}
     .suggestions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:18px}
     .suggestions button{min-height:38px;padding:7px 12px;background:transparent;color:var(--dark);border:1px solid var(--line);font-size:.84rem}
-    .suggestions button:hover{background:var(--sage);transform:none}
-    .recipe{display:none;margin-bottom:76px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .suggestions button:hover{background:var(--dark);color:#fff;transform:none}
+    .recipe{display:none;margin-bottom:76px;background:var(--card);border:1px solid #b8bdb8;box-shadow:var(--shadow);backdrop-filter:blur(4px)}
     .recipe.visible{display:block;animation:rise .3s ease both}
     .recipe-head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;padding:34px 38px;border-bottom:1px solid var(--line)}
     h2{margin:.12em 0 0;font:400 clamp(2.6rem,6vw,5rem)/1 Georgia,serif;letter-spacing:-.045em}
@@ -45,12 +45,12 @@
     .servings label{font-size:.74rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
     .recipe-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:0}
     .side,.method{padding:36px 38px}
-    .side{background:#edf0e7;border-right:1px solid var(--line)}
+    .side{background:rgba(235,239,234,.88);border-right:1px solid var(--line)}
     h3{margin:0 0 16px;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
     ul,ol{margin:0;padding-left:1.25rem}
     li+li{margin-top:10px}
     .equipment{margin-top:34px}
-    .safety{margin-top:34px;padding:20px;background:#f5ddd1;border-left:4px solid var(--orange)}
+    .safety{margin-top:34px;padding:20px;background:#f2efe7;border-left:4px solid var(--brass)}
     .safety strong{display:block;margin-bottom:5px;font-size:.73rem;letter-spacing:.12em;text-transform:uppercase}
     footer{display:flex;justify-content:space-between;gap:28px;padding:26px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
     footer p{margin:0;max-width:680px}
